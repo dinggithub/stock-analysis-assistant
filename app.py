@@ -44,7 +44,7 @@ if "should_stop" not in st.session_state:
     st.session_state.should_stop = False
 
 # DeepSeek API 配置
-DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
+DEEPSEEK_API_KEY = st.secrets.get("DEEPSEEK_API_KEY")
 client = openai.OpenAI(
     api_key=DEEPSEEK_API_KEY,
     base_url="https://api.deepseek.com"
